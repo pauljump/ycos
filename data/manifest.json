@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "snapshot_dates_utc": [
+    "2026-09-21",
+    "2026-09-22"
+  ],
+  "company_count": 6120,
+  "yc_enriched_company_count": 6112,
+  "directory_founder_record_count": 11704,
+  "yc_founder_record_count": 11669,
+  "news_record_count": 4557,
+  "launch_record_count": 3232,
+  "missing_yc_enrichment": [
+    "alchemize",
+    "amulet",
+    "incandor",
+    "osmaura",
+    "playablai",
+    "talkito",
+    "terrasoft",
+    "typeless"
+  ],
+  "batch_counts": {
+    "Fall 2024": 94,
+    "Fall 2025": 145,
+    "Fall 2026": 19,
+    "Spring 2025": 143,
+    "Spring 2026": 195,
+    "Summer 2005": 7,
+    "Summer 2006": 11,
+    "Summer 2007": 19,
+    "Summer 2008": 20,
+    "Summer 2009": 25,
+    "Summer 2010": 36,
+    "Summer 2011": 60,
+    "Summer 2012": 83,
+    "Summer 2013": 51,
+    "Summer 2014": 78,
+    "Summer 2015": 102,
+    "Summer 2016": 101,
+    "Summer 2017": 122,
+    "Summer 2018": 130,
+    "Summer 2019": 174,
+    "Summer 2020": 203,
+    "Summer 2021": 386,
+    "Summer 2022": 234,
+    "Summer 2023": 220,
+    "Summer 2024": 247,
+    "Summer 2025": 165,
+    "Summer 2026": 231,
+    "Unspecified": 1,
+    "Winter 2006": 7,
+    "Winter 2007": 12,
+    "Winter 2008": 20,
+    "Winter 2009": 16,
+    "Winter 2010": 26,
+    "Winter 2011": 43,
+    "Winter 2012": 62,
+    "Winter 2013": 46,
+    "Winter 2014": 73,
+    "Winter 2015": 108,
+    "Winter 2016": 118,
+    "Winter 2017": 116,
+    "Winter 2018": 145,
+    "Winter 2019": 193,
+    "Winter 2020": 227,
+    "Winter 2021": 332,
+    "Winter 2022": 392,
+    "Winter 2023": 270,
+    "Winter 2024": 247,
+    "Winter 2025": 165,
+    "Winter 2026": 199,
+    "Winter 2027": 1
+  },
+  "sources": [
+    {
+      "name": "Archived public founder-directory export",
+      "fetched_dates_utc": [
+        "2026-09-21"
+      ],
+      "sha256": "9b594bea3e231a044368d08a2cb9c2d52032af7977ec232f95c42c24542efdd4"
+    },
+    {
+      "name": "Y Combinator public company pages",
+      "url_template": "https://www.ycombinator.com/companies/{slug}",
+      "fetched_dates_utc": [
+        "2026-09-22"
+      ]
+    }
+  ],
+  "coverage": "All 6,120 company records in the original archive; not a claim of complete or current YC directory coverage.",
+  "transformations": [
+    "Sort by slug and expose a JSON array; add yc_url derived from slug.",
+    "Use explicit company, founder, news, and launch field lists; absent scalar fields become null and absent collections become empty arrays.",
+    "Omit local image filenames, avatar URLs, duplicated nested company/user objects, sharing metadata, moderation fields, and has_email flags.",
+    "Remove AWS signed URL query parameters, including links in launch text; remaining image URLs may no longer resolve.",
+    "Preserve source team-size strings, placeholders, and distinct directory/YC status, tag, and founder fields without inference or deduplication."
+  ],
+  "files": {
+    "companies.json": {
+      "bytes": 26314814,
+      "sha256": "444d56c84fc6b2958d6b1d6315efdbbea29ba93318d594cf01b32ec75b2d8931"
+    }
+  }
+}
